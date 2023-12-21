@@ -29,6 +29,7 @@ cc_library_static {
         "-DANDROID",
         "-Wall",
         "-Werror",
+        "-Wno-unused-function",
         // common/x86/ihevc_sao_ssse3_intr.c: implicit conversion from
         // 'int' to 'char' changes value from 128 to -128
         "-Wno-error=constant-conversion",
@@ -296,6 +297,18 @@ cc_library_static {
             },
         },
 
+        loongarch64: {
+            local_include_dirs: [
+                "decoder/loongarch",
+                "common/loongarch",
+            ],
+
+            srcs: [
+                "decoder/loongarch/ihevcd_function_selector.c",
+                "decoder/loongarch/ihevcd_function_selector_loongarch_generic.c",
+            ],
+        },
+
         x86_64: {
             cflags: [
                 "-DX86",
@@ -434,6 +447,7 @@ cc_library_static {
         "-O3",
         "-Wall",
         "-Wno-unused-variable",
+        "-Wno-unused-function",
         "-Wno-unused-parameter",
         "-Wno-switch",
     ],
@@ -754,6 +768,12 @@ cc_library_static {
                     "-DARM",
                 ],
             },
+        },
+
+        loongarch64: {
+            local_include_dirs: [
+                "common/loongarch",
+            ],
         },
 
         x86_64: {
