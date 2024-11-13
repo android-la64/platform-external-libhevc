@@ -68,6 +68,7 @@ typedef enum
     ARCH_X86_AVX2,
     ARCH_MIPS_GENERIC       =   0x200,
     ARCH_MIPS_32,
+    ARCH_LOONGARCH64_GENERIC    =   0x300,
     ARCH_RISCV64_GENERIC    =   0x400,
 }IVD_ARCH_T;
 

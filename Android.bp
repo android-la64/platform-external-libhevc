@@ -389,6 +389,16 @@ cc_library_static {
                 "decoder/x86/ihevcd_it_rec_dc_ssse3_intr.c",
             ],
         },
+        loongarch64: {
+            local_include_dirs: [
+                "common/loongarch64",
+            ],
+
+            srcs: [
+                "decoder/loongarch64/ihevcd_function_selector.c",
+                "decoder/loongarch64/ihevcd_function_selector_generic.c",
+            ],
+        },
         riscv64: {
             local_include_dirs: [
                 "common/riscv64",
@@ -778,6 +788,12 @@ cc_library_static {
         x86: {
             local_include_dirs: [
                 "common/x86",
+            ],
+        },
+
+        loongarch64: {
+            local_include_dirs: [
+                "common/loongarch64",
             ],
         },
 
